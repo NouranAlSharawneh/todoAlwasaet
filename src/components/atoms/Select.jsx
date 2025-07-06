@@ -1,7 +1,7 @@
 function Select({ options, value, onChange }) {
   return (
     <select
-      className="border px-2 py-2 rounded bg-white text-xs md:text-sm text-gray-800"
+      className="border px-2 py-2 rounded bg-white text-xs md:text-sm text-gray-800 border-gray-300 cursor-pointer focus:outline-none focus:ring-1 focus:ring-blue-500"
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >
