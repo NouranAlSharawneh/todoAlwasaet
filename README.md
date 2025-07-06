@@ -81,7 +81,7 @@ This sketch helped identify component boundaries for the Atomic Design architect
 
 A flowchart was created in **Lucidchart** to visualize the logical flow of task creation, validation, filtering, and UI state transitions.
 
-> ![Flow Diagram](assets/Flowchart.png)
+> ![Flow Diagram](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/Flowchart.png)
 
 ### Flow Summary:
 
