@@ -1,5 +1,3 @@
-import React from "react";
-
 function Button({ children, type = "primary", onClick, disabled = false }) {
   return (
     <button
@@ -9,7 +7,7 @@ function Button({ children, type = "primary", onClick, disabled = false }) {
           : type === "secondary"
           ? "border border-gray-300 text-black hover:bg-gray-300/20 px-2 py-2 focus:ring-blue-500"
           : type === "close"
-          ? " text-black hover:text-red-500 focus:ring-blue-500"
+          ? " text-black hover:text-red-500 focus:ring-gray-500"
           : ""
       }`}
       onClick={onClick}

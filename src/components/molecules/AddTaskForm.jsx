@@ -3,22 +3,24 @@ import Select from "../atoms/Select";
 import Button from "../atoms/Button";
 import FormLabel from "../atoms/FormLabel";
 import { BiSave } from "react-icons/bi";
+import TaskInput from "../atoms/TaskInput";
+import Colorpicker from "../atoms/Colorpicker";
 
 const categoryOptions = [
-  { value: "work", label: "Work" },
-  { value: "studying", label: "Studying" },
-  { value: "chores", label: "Chores" },
-  { value: "other", label: "Other" },
+  { value: "work", label: "💼 Work" },
+  { value: "studying", label: "📚 Studying" },
+  { value: "chores", label: "🧹 Chores" },
+  { value: "other", label: "🔍 Other" },
 ];
 
-const colorOptions = ["blue", "green", "red", "yellow", "purple"];
+const colorOptions = ["blue", "green", "red", "orange", "purple"];
 
 function AddTaskForm({ onSubmit }) {
   const [text, setText] = useState("");
   const [category, setCategory] = useState("work");
   const [color, setColor] = useState("blue");
 
-  const isTooLong = text.length > 25;
+  const isTooLong = text.length > 30;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +31,7 @@ function AddTaskForm({ onSubmit }) {
       text,
       category,
       color,
-      completed: false,
+      status: false,
     };
 
     onSubmit(newTask);
@@ -38,56 +40,36 @@ function AddTaskForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6 ">
-      <div className="flex justify-between items-center">
-        {/* Category Dropdown */}
-        <div>
+      <div className="flex justify-between items-center gap-6 lg:gap-20">
+        <div className="flex-1">
           <FormLabel>Category</FormLabel>
           <Select
             options={categoryOptions}
             value={category}
             onChange={setCategory}
+            className="w-full"
           />
         </div>
-
-        {/* Color Picker */}
-        <div>
+        <div className="flex-1">
           <FormLabel>Color</FormLabel>
-          <div className="flex gap-2">
-            {colorOptions.map((clr) => (
-              <div
-                key={clr}
-                onClick={() => setColor(clr)}
-                className={`w-6 h-6 rounded-full cursor-pointer border-2 ${
-                  color === clr ? "border-gray-400" : "border-transparent"
-                }`}
-                style={{ backgroundColor: clr }}
-              ></div>
-            ))}
-          </div>
+          <Colorpicker
+            colorOptions={colorOptions}
+            color={color}
+            setColor={setColor}
+          />
         </div>
       </div>
 
-      {/* Task Text */}
       <div>
         <FormLabel>Task</FormLabel>
-        <textarea
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Write your task..."
-          className={`w-full p-2 rounded border placeholder:text-xs ${
-            isTooLong ? "border-red-500" : "border-gray-300"
-          } focus:outline-none`}
-          rows={2}
-          maxLength={100}
-        />
+        <TaskInput text={text} setText={setText} isTooLong={isTooLong} />
         <p
           className={`text-xs ${isTooLong ? "text-red-500" : "text-gray-400"}`}
         >
-          {text.length}/25 characters
+          {text.length}/30 characters
         </p>
       </div>
 
-      {/* Submit Button */}
       <div className="flex justify-end">
         <Button type="secondary" disabled={isTooLong || text.trim() === ""}>
           <BiSave /> Add Task

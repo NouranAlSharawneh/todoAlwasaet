@@ -14,16 +14,23 @@ function MainLayout() {
   const getFilteredTasks = () => {
     switch (filter) {
       case "active":
-        return tasks.filter((t) => !t.completed);
+        return tasks.filter((t) => !t.status);
       case "completed":
-        return tasks.filter((t) => t.completed);
+        return tasks.filter((t) => t.status);
       default:
         return tasks;
     }
   };
 
   const handleAddTask = (newTask) => {
-    setTasks((prevTasks) => [...prevTasks, newTask]);
+    setTasks((prevTasks) => {
+      const updated = [...prevTasks, newTask];
+      const sorted = [...updated].sort((a, b) => {
+        if (a.status === b.status) return 0;
+        return a.status ? 1 : -1;
+      });
+      return sorted;
+    });
     setShowModal(false);
   };
 
@@ -31,7 +38,7 @@ function MainLayout() {
     <section className="mx-auto max-w-4xl pt-15 min-h-screen px-4">
       <h1 className="text-5xl md:text-8xl text-center">Todo List</h1>
 
-      <div className="px-4 pt-10 flex items-center justify-between">
+      <div className="pt-10 flex items-center justify-between">
         <Button onClick={() => setShowModal(true)}>
           <IoAdd /> Add new Todo
         </Button>
