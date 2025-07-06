@@ -5,6 +5,7 @@ import FilterList from "../molecules/FilterList";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import TaskList from "../organisms/TaskList";
 import AddTaskPopup from "../organisms/AddTaskPopup";
+import Header from "../atoms/Header";
 
 function MainLayout() {
   const [tasks, setTasks] = useLocalStorage("tasks", []);
@@ -36,8 +37,7 @@ function MainLayout() {
 
   return (
     <section className="mx-auto max-w-4xl pt-15 min-h-screen px-4">
-      <h1 className="text-5xl md:text-8xl text-center">Todo List</h1>
-
+      <Header />
       <div className="pt-10 flex items-center justify-between">
         <Button onClick={() => setShowModal(true)}>
           <IoAdd /> Add new Todo
@@ -45,7 +45,6 @@ function MainLayout() {
         <FilterList currentFilter={filter} onChangeFilter={setFilter} />
       </div>
       <TaskList tasks={getFilteredTasks()} setTasks={setTasks} />
-
       {showModal && (
         <AddTaskPopup
           onAdd={handleAddTask}
