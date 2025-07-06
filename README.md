@@ -1,12 +1,94 @@
-# React + Vite
+# 📝 Todo List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Todo List built using **React**, **Tailwind CSS v4**, and **Atomic Design** principles. This app was developed as a task for a frontend interview for Alwasaet, focusing on clean architecture.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Objective
 
-## Expanding the ESLint configuration
+To build a modern, responsive Todo List app with support for:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Task creation, filtering, and completion
+- Modal-based task input
+- Local storage persistence
+- Unit testing
+- Clean and reusable UI components (Atomic Design)
+
+---
+
+## 🛠 Technologies Used
+
+| Layer         | Tech/Library                                |
+| ------------- | ------------------------------------------- |
+| Framework     | [React](https://reactjs.org/)               |
+| Styling       | [Tailwind CSS v4](https://tailwindcss.com/) |
+| State Storage | LocalStorage + React `useState`             |
+| Testing       | [Jest](https://jestjs.io/)                  |
+| Architecture  | Atomic Design Pattern                       |
+
+---
+
+## 📐 Thought Process
+
+- **Atomic Design**: UI is broken into Atoms (buttons, inputs), Molecules (form fields), and Organisms (modal, task list).
+- **Reusability**: Components are modular and scalable.
+- **UX**: Focus on minimal and intuitive interactions.
+
+---
+
+## Functional Requirements
+
+- Create a new task via modal popup
+- Assign category and color to task
+- Filter tasks by status (All, Active, Completed)
+- Persist tasks in `localStorage`
+- Mark task as complete (checkbox)
+- Limit task text to 50 characters
+- Responsive UI
+
+---
+
+## Non-Functional Requirements
+
+- App must follow Atomic Design principles
+- State must persist across reloads using `localStorage`
+- Code must be modular, maintainable, and testable
+- Modal UX must not break flow
+- Filter logic must be efficient
+- Unit tests must cover core logic (using Jest)
+
+---
+
+## 🧾 Folder Structure
+
+## 🧾 Low-Fidelity Design
+
+A low-fidelity wireframe was sketched during the planning phase to outline the core layout and interactions. It captures:
+
+- A clear Todo list UI with checkbox toggles
+- A filter dropdown for task status
+- A floating “Add Task” button that triggers a popup modal
+- Modal with category selector, color picker, and input with a character limit
+
+> ![Low Fidelity Sketch](assets/sketch.png)  
+> _(Sketch shows Todo layout, filters, popup design)_
+
+This sketch helped identify component boundaries for the Atomic Design architecture.
+
+---
+
+## Flow Diagram
+
+A flowchart was created in **Lucidchart** to visualize the logical flow of task creation, validation, filtering, and UI state transitions.
+
+> ![Flow Diagram](assets/Flowchart.png)
+
+### Flow Summary:
+
+1. App loads and pulls tasks from localStorage
+2. If no tasks exist → show empty state
+3. Tasks display with status filtering (All / Active / Completed)
+4. Modal opens to create task → input is validated
+5. If valid, new task is saved and state is updated
+6. User can check, filter tasks
+7. Updated task list persists in `localStorage`
