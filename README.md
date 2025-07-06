@@ -70,7 +70,7 @@ A low-fidelity wireframe was sketched during the planning phase to outline the c
 - A floating “Add Task” button that triggers a popup modal
 - Modal with category selector, color picker, and input with a character limit
 
-> ![Low Fidelity Sketch](assets/sketch.png)  
+> ![Low Fidelity Sketch](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/sketch.png)  
 > _(Sketch shows Todo layout, filters, popup design)_
 
 This sketch helped identify component boundaries for the Atomic Design architecture.
@@ -81,7 +81,7 @@ This sketch helped identify component boundaries for the Atomic Design architect
 
 A flowchart was created in **Lucidchart** to visualize the logical flow of task creation, validation, filtering, and UI state transitions.
 
-> ![Flow Diagram](assets/Flowchart.png)
+> ![Flow Diagram](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/Flowchart.png)
 
 ### Flow Summary:
 
