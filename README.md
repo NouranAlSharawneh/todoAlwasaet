@@ -2,6 +2,10 @@
 
 A simple Todo List built using **React**, **Tailwind CSS v4**, and **Atomic Design** principles. This app was developed as a task for a frontend interview for Alwasaet, focusing on clean architecture.
 
+> ![Screenshot of the Site](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/Webapp.png)
+
+Check out the app here: [https://todo-alwasaet.vercel.app/](https://todo-alwasaet.vercel.app/)
+
 ---
 
 ## 🚀 Objective
