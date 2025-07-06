@@ -61,6 +61,8 @@ To build a modern, responsive Todo List app with support for:
 
 ## 🧾 Folder Structure
 
+> ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png)
+
 ## 🧾 Low-Fidelity Design
 
 A low-fidelity wireframe was sketched during the planning phase to outline the core layout and interactions. It captures:
