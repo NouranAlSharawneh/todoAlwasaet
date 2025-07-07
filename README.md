@@ -87,14 +87,6 @@ An Activity flow digram was created to visualize the logical flow of task creati
 
 > ![Flow Diagram](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/ActivityDigram.png)
 
----
-
-## Folder Structure
-
-A folder strurcture digram was created in **Lucidchart** to visualize the logical of breaking the componets down following the **Atomic Design architecture**.
-
-> ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png)
-
 ### Flow Summary:
 
 1. App loads and pulls tasks from localStorage
@@ -104,6 +96,14 @@ A folder strurcture digram was created in **Lucidchart** to visualize the logica
 5. If valid, new task is saved and state is updated
 6. User can mark a task as checked _(status completed)_, delete a task, and filter tasks.
 7. Updated task list persists in `localStorage`
+
+---
+
+## Folder Structure
+
+A folder strurcture digram was created in **Lucidchart** to visualize the logical of breaking the componets down following the **Atomic Design architecture**.
+
+> ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png)
 
 ---
 
