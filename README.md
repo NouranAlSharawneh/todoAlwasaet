@@ -88,7 +88,7 @@ This sketch helped me identify the component boundaries for the Atomic Design ar
 
 ## Flow Diagram
 
-An Activity flow chart was created in **Lucidchart** to visualize the logical flow of task creation, validation, filtering, task deletion, and UI state transitions.
+An Activity flow digram was created to visualize the logical flow of task creation, validation, filtering, task deletion, and UI state transitions.
 
 > ![Flow Diagram](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/ActivityDigram.png)
 
