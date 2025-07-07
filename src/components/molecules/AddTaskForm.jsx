@@ -1,20 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { categoryOptions, colorOptions } from "../../utils/options";
+import { BiSave } from "react-icons/bi";
 import Select from "../atoms/Select";
 import Button from "../atoms/Button";
 import FormLabel from "../atoms/FormLabel";
-import { BiSave } from "react-icons/bi";
 import TaskInput from "../atoms/TaskInput";
 import Colorpicker from "../atoms/Colorpicker";
-
-const categoryOptions = [
-  { value: "work", label: "💼 Work" },
-  { value: "studying", label: "📚 Studying" },
-  { value: "chores", label: "🧹 Chores" },
-  { value: "other", label: "🔍 Other" },
-];
-
-const colorOptions = ["blue", "green", "red", "orange", "purple"];
 
 function AddTaskForm({ onSubmit }) {
   const [text, setText] = useState("");

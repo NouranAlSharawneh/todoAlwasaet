@@ -6,6 +6,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 import TaskList from "../organisms/TaskList";
 import AddTaskPopup from "../organisms/AddTaskPopup";
 import Header from "../atoms/Header";
+import { addNewTask } from "../../utils/utils";
 
 function MainLayout() {
   const [tasks, setTasks] = useLocalStorage("tasks", []);
@@ -24,14 +25,7 @@ function MainLayout() {
   };
 
   const handleAddTask = (newTask) => {
-    setTasks((prevTasks) => {
-      const updated = [...prevTasks, newTask];
-      const sorted = [...updated].sort((a, b) => {
-        if (a.status === b.status) return 0;
-        return a.status ? 1 : -1;
-      });
-      return sorted;
-    });
+    setTasks((prevTasks) => addNewTask(prevTasks, newTask));
     setShowModal(false);
   };
 

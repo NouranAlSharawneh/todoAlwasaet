@@ -5,6 +5,7 @@ import AddTaskForm from "../../../components/molecules/AddTaskForm";
 import { jest, describe, it, expect } from "@jest/globals";
 
 describe("AddTaskForm", () => {
+  // Testing if all the form fields are rendered
   it("renders all form fields", () => {
     render(<AddTaskForm onSubmit={jest.fn()} />);
     expect(screen.getByText("Category")).toBeInTheDocument();
@@ -15,6 +16,7 @@ describe("AddTaskForm", () => {
     ).toBeInTheDocument();
   });
 
+  // Testing if the onSubmit function is called with the correct data when the form is submitted
   it("calls onSubmit with correct data when form is submitted", () => {
     const handleSubmit = jest.fn();
     render(<AddTaskForm onSubmit={handleSubmit} />);
@@ -33,13 +35,15 @@ describe("AddTaskForm", () => {
     );
   });
 
+  // Text input is empty or too long validation
   it("does not call onSubmit if task is empty or too long", () => {
     const handleSubmit = jest.fn();
     render(<AddTaskForm onSubmit={handleSubmit} />);
-    // Try submitting empty
+    // Try submitting empty field
     fireEvent.click(screen.getByRole("button", { name: /add task/i }));
     expect(handleSubmit).not.toHaveBeenCalled();
-    // Try submitting too long
+
+    // Try submitting text that is too long
     fireEvent.change(screen.getByLabelText("Task"), {
       target: { value: "a".repeat(33) },
     });
