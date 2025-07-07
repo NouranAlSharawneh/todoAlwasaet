@@ -65,12 +65,6 @@ To build a modern, responsive Todo List app with support for:
 
 ---
 
-## Folder Structure
-
-A folder strurcture digram was created in **Lucidchart** to visualize the logical of breaking the componets down following the **Atomic Design architecture**.
-
-> ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png)
-
 ## Low-Fidelity Design
 
 A low-fidelity wireframe was sketched during the planning phase to outline the core layout and interactions. It captures:
@@ -87,11 +81,19 @@ This sketch helped me identify the component boundaries for the Atomic Design ar
 
 ---
 
-## Flow Diagram
+## Activity Flow Diagram
 
 An Activity flow digram was created to visualize the logical flow of task creation, validation, filtering, task deletion, and UI state transitions.
 
 > ![Flow Diagram](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/ActivityDigram.png)
+
+---
+
+## Folder Structure
+
+A folder strurcture digram was created in **Lucidchart** to visualize the logical of breaking the componets down following the **Atomic Design architecture**.
+
+> ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png)
 
 ### Flow Summary:
 
