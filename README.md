@@ -4,7 +4,7 @@ A simple Todo List built using **React**, **Tailwind CSS v4**, and **Atomic Desi
 
 > ![Screenshot of the Site](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/Webapp.png)
 
-Check out the app here: [https://todo-alwasaet.vercel.app/](https://todo-alwasaet.vercel.app/)
+Check out the website here: [https://todo-alwasaet.vercel.app/](https://todo-alwasaet.vercel.app/)
 
 ---
 
@@ -22,13 +22,14 @@ To build a modern, responsive Todo List app with support for:
 
 ## Technologies Used
 
-| Layer         | Tech/Library                                |
-| ------------- | ------------------------------------------- |
-| Framework     | [React](https://reactjs.org/)               |
-| Styling       | [Tailwind CSS v4](https://tailwindcss.com/) |
-| State Storage | LocalStorage + React `useState`             |
-| Testing       | [Jest](https://jestjs.io/)                  |
-| Architecture  | Atomic Design Pattern                       |
+| Layer         | Tech/Library                    |
+| ------------- | ------------------------------- |
+| Framework     | React                           |
+| Styling       | Tailwind CSS v4                 |
+| Animation     | Framer Motion                   |
+| State Storage | LocalStorage + React `useState` |
+| Testing       | Jest                            |
+| Architecture  | Atomic Design Pattern           |
 
 ---
 
