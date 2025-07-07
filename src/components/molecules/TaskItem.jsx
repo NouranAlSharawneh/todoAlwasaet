@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useSwipeable } from "react-swipeable";
 import { toggleTaskStatus, deleteTask } from "../../utils/utils";
-import { categoryIcons, colorClasses } from "../../utils/options";
-import Checkmark from "../atoms/Checkmark";
+import DraggableTrash from "../atoms/DraggableTrash";
+import DraggableTaskCard from "./DraggableTaskCard";
 import DeleteConfirmDialog from "../organisms/DeleteConfirmDialog";
+import { useTaskDrag } from "../../hooks/useTaskDrag";
 
 function TaskItem({ task, setTasks }) {
-  const { text, category, color, status, id } = task;
+  const { id } = task;
   const [showConfirm, setShowConfirm] = useState(false);
 
   const handleToggleStatus = () => {
@@ -18,32 +18,21 @@ function TaskItem({ task, setTasks }) {
     setShowConfirm(false);
   };
 
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => setShowConfirm(true),
-    delta: 50,
-    trackMouse: true,
-  });
-
-  console.log(color);
+  const { isDragging, dragOffset, swipeHandlers } = useTaskDrag(() =>
+    setShowConfirm(true)
+  );
 
   return (
     <>
-      <div
-        {...swipeHandlers}
-        data-testid="task-item"
-        className={`flex items-center justify-between p-4 border rounded border-y-gray-200 border-r-gray-200 border-l-4 transition-colors duration-500 ${
-          colorClasses[color]
-        } bg-white shadow-xs hover:shadow-md transition-shadow duration-200 ${
-          status ? "opacity-60 line-through" : ""
-        }`}
-      >
-        <div className="flex items-center gap-4">
-          <span className="text-gray-500">{categoryIcons[category]}</span>
-          <span className="text-gray-800 text-sm">{text}</span>
-        </div>
-        <div>
-          <Checkmark checked={status} onChange={() => handleToggleStatus()} />
-        </div>
+      <div className="relative">
+        <DraggableTrash />
+        <DraggableTaskCard
+          task={task}
+          isDragging={isDragging}
+          dragOffset={dragOffset}
+          swipeHandlers={swipeHandlers}
+          onToggleStatus={handleToggleStatus}
+        />
       </div>
       {showConfirm && (
         <DeleteConfirmDialog
