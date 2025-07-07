@@ -106,7 +106,7 @@ An Activity flow digram was created to visualize the logical flow of task creati
 
 ## Bonus part of the Task: Custom `useLocalStorage` Hook
 
-As the bonus feature task, the app is going to uses a reusable custom hook to persist state in the browser's local storage. This feature will allow the Todo List Website maintain its state _(tasks list)_ across reloads without needing a backend or database.
+As part of this interview task, I was asked to implement a bonus feature: creating a custom hook to persist state in the browser’s local storage. This enhancement allows the Todo List app to maintain its state (i.e., the list of tasks) across page reloads, without relying on a backend or database.
 
 ```js
 import { useState, useEffect } from "react";
