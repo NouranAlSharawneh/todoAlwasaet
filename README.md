@@ -8,11 +8,11 @@ Check out the app here: [https://todo-alwasaet.vercel.app/](https://todo-alwasae
 
 ---
 
-## 🚀 Objective
+## Objective
 
 To build a modern, responsive Todo List app with support for:
 
-- Task creation, filtering, and completion
+- Task creation, deletion filtering, and completion
 - Modal-based task input
 - Local storage persistence
 - Unit testing
@@ -20,7 +20,7 @@ To build a modern, responsive Todo List app with support for:
 
 ---
 
-## 🛠 Technologies Used
+## Technologies Used
 
 | Layer         | Tech/Library                                |
 | ------------- | ------------------------------------------- |
@@ -32,7 +32,7 @@ To build a modern, responsive Todo List app with support for:
 
 ---
 
-## 📐 Thought Process
+## Thought Process
 
 - **Atomic Design**: UI is broken into Atoms (buttons, inputs), Molecules (form fields), and Organisms (modal, task list).
 - **Reusability**: Components are modular and scalable.
@@ -45,9 +45,10 @@ To build a modern, responsive Todo List app with support for:
 - Create a new task via modal popup
 - Assign category and color to task
 - Filter tasks by status (All, Active, Completed)
+- Swipe to delete a task
 - Persist tasks in `localStorage`
 - Mark task as complete (checkbox)
-- Limit task text to 50 characters
+- Limit task text to 30 characters
 - Responsive UI
 
 ---
@@ -56,18 +57,20 @@ To build a modern, responsive Todo List app with support for:
 
 - App must follow Atomic Design principles
 - State must persist across reloads using `localStorage`
-- Code must be modular, maintainable, and testable
+- Code must be modular, and testable
 - Modal UX must not break flow
 - Filter logic must be efficient
 - Unit tests must cover core logic (using Jest)
 
 ---
 
-## 🧾 Folder Structure
+## Folder Structure
+
+A folder strurcture digram was created in **Lucidchart** to visualize the logical of breaking the componets down following the **Atomic Design Pattern Principles**.
 
 > ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png)
 
-## 🧾 Low-Fidelity Design
+## Low-Fidelity Design
 
 A low-fidelity wireframe was sketched during the planning phase to outline the core layout and interactions. It captures:
 
@@ -85,9 +88,9 @@ This sketch helped identify component boundaries for the Atomic Design architect
 
 ## Flow Diagram
 
-A flowchart was created in **Lucidchart** to visualize the logical flow of task creation, validation, filtering, and UI state transitions.
+An Activity flow chart was created in **Lucidchart** to visualize the logical flow of task creation, validation, filtering, task deletion, and UI state transitions.
 
-> ![Flow Diagram](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/Flowchart.png)
+> ![Flow Diagram](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/ActivityDigram.png)
 
 ### Flow Summary:
 
@@ -96,5 +99,36 @@ A flowchart was created in **Lucidchart** to visualize the logical flow of task 
 3. Tasks display with status filtering (All / Active / Completed)
 4. Modal opens to create task → input is validated
 5. If valid, new task is saved and state is updated
-6. User can check, filter tasks
+6. User can mark a task as checked _(status completed)_, delete a task, and filter tasks.
 7. Updated task list persists in `localStorage`
+
+---
+
+## Bonus part of Task: Custom `useLocalStorage` Hook
+
+As a bonus feature, the app uses a reusable custom hook to persist state in the browser's local storage. This allows the Todo List to maintain its state across reloads without needing a backend or database.
+
+### 📦 `src/hooks/useLocalStorage.js`
+
+```js
+import { useState, useEffect } from "react";
+
+export function useLocalStorage(key, defaultValue) {
+  const [value, setValue] = useState(() => {
+    const stored = localStorage.getItem(key);
+    return stored ? JSON.parse(stored) : defaultValue;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue];
+}
+```
+
+This hook ensures:
+
+- Clean separation of logic from UI
+- Reusability for other parts of the app
+- Automatic syncing between state and `localStorage`
