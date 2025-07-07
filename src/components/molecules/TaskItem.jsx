@@ -1,3 +1,4 @@
+import React from "react";
 import Checkmark from "../atoms/Checkmark";
 
 function TaskItem({ task, setTasks }) {
@@ -33,6 +34,7 @@ function TaskItem({ task, setTasks }) {
 
   return (
     <div
+      data-testid="task-item"
       className={`flex items-center justify-between p-4 border rounded border-y-gray-200 border-r-gray-200 border-l-4 transition-colors duration-500 ${
         colorClasses[color]
       } bg-white shadow-xs hover:shadow-md transition-shadow duration-200 ${

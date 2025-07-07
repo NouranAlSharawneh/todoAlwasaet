@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import Select from "../atoms/Select";
 import Button from "../atoms/Button";
@@ -61,8 +62,14 @@ function AddTaskForm({ onSubmit }) {
       </div>
 
       <div>
-        <FormLabel>Task</FormLabel>
-        <TaskInput text={text} setText={setText} isTooLong={isTooLong} />
+        <FormLabel htmlFor="task-input">Task</FormLabel>
+        <TaskInput
+          id="task-input"
+          ariaLabel="Task"
+          text={text}
+          setText={setText}
+          isTooLong={isTooLong}
+        />
         <p
           className={`text-xs ${isTooLong ? "text-red-500" : "text-gray-400"}`}
         >

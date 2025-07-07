@@ -1,8 +1,10 @@
 import React from "react";
 
-function TaskInput({ text, setText, isTooLong }) {
+function TaskInput({ text, setText, isTooLong, id, ariaLabel }) {
   return (
     <textarea
+      id={id}
+      aria-label={ariaLabel}
       value={text}
       onChange={(e) => setText(e.target.value)}
       placeholder="Write your task..."

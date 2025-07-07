@@ -1,3 +1,5 @@
+import React from "react";
+
 function Button({ children, type = "primary", onClick, disabled = false }) {
   return (
     <button
