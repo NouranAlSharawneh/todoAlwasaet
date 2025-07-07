@@ -9,7 +9,7 @@ export const colorClasses = {
   blue: "border-l-blue-500",
   green: "border-l-green-500",
   red: "border-l-red-500",
-  yellow: "border-l-yellow-500",
+  orange: "border-l-orange-400",
   purple: "border-l-purple-500",
 };
 

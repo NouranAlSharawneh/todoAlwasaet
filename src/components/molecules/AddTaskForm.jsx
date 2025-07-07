@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { categoryOptions, colorOptions } from "../../utils/options";
+import { formSubmit } from "../../utils/utils";
 import { BiSave } from "react-icons/bi";
 import Select from "../atoms/Select";
 import Button from "../atoms/Button";
@@ -16,19 +17,7 @@ function AddTaskForm({ onSubmit }) {
   const isTooLong = text.length > 30;
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isTooLong || text.trim() === "") return;
-
-    const newTask = {
-      id: Date.now(),
-      text,
-      category,
-      color,
-      status: false,
-    };
-
-    onSubmit(newTask);
-    setText("");
+    formSubmit(e, isTooLong, text, category, color, onSubmit, setText);
   };
 
   return (

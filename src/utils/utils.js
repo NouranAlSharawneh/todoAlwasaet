@@ -21,7 +21,7 @@ export function deleteTask(tasks, id) {
   return tasks.filter((task) => task.id !== id);
 }
 
-export function handleSubmit(
+export function formSubmit(
   e,
   isTooLong,
   text,

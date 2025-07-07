@@ -6,7 +6,7 @@ function Header() {
       <img
         src="assets/listIcon.png"
         alt="Todo Alwasaet Logo"
-        className="md:w-40 md:h-40 w-20 h-20 "
+        className="md:w-40 md:h-40 w-20 h-20 cursor-pointer"
       />
       <h1 className="text-5xl md:text-8xl text-center">Todo List</h1>
     </div>

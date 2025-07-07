@@ -24,6 +24,8 @@ function TaskItem({ task, setTasks }) {
     trackMouse: true,
   });
 
+  console.log(color);
+
   return (
     <>
       <div
