@@ -14,9 +14,9 @@ To build a modern, responsive Todo List app with support for:
 
 - Task creation, deletion filtering, and completion
 - Modal-based task input
-- Local storage persistence
 - Unit testing
 - Clean and reusable UI components (Atomic Design)
+- Bonus feature local storage persistence
 
 ---
 
@@ -35,7 +35,7 @@ To build a modern, responsive Todo List app with support for:
 ## Thought Process
 
 - **Atomic Design**: UI is broken into Atoms (buttons, inputs), Molecules (form fields), and Organisms (modal, task list).
-- **Reusability**: Components are modular and scalable.
+- **Reusability**: Components needs to be modular and scalable.
 - **UX**: Focus on minimal and intuitive interactions.
 
 ---
@@ -66,7 +66,7 @@ To build a modern, responsive Todo List app with support for:
 
 ## Folder Structure
 
-A folder strurcture digram was created in **Lucidchart** to visualize the logical of breaking the componets down following the **Atomic Design Pattern Principles**.
+A folder strurcture digram was created in **Lucidchart** to visualize the logical of breaking the componets down following the **Atomic Design architecture**.
 
 > ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png)
 
@@ -82,7 +82,7 @@ A low-fidelity wireframe was sketched during the planning phase to outline the c
 > ![Low Fidelity Sketch](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/sketch.png)  
 > _(Sketch shows Todo layout, filters, popup design)_
 
-This sketch helped identify component boundaries for the Atomic Design architecture.
+This sketch helped me identify the component boundaries for the Atomic Design architecture.
 
 ---
 
@@ -104,11 +104,9 @@ An Activity flow chart was created in **Lucidchart** to visualize the logical fl
 
 ---
 
-## Bonus part of Task: Custom `useLocalStorage` Hook
+## Bonus part of the Task: Custom `useLocalStorage` Hook
 
-As a bonus feature, the app uses a reusable custom hook to persist state in the browser's local storage. This allows the Todo List to maintain its state across reloads without needing a backend or database.
-
-### 📦 `src/hooks/useLocalStorage.js`
+As the bonus feature task, the app is going to uses a reusable custom hook to persist state in the browser's local storage. This feature will allow the Todo List Website maintain its state _(tasks list)_ across reloads without needing a backend or database.
 
 ```js
 import { useState, useEffect } from "react";
@@ -126,9 +124,3 @@ export function useLocalStorage(key, defaultValue) {
   return [value, setValue];
 }
 ```
-
-This hook ensures:
-
-- Clean separation of logic from UI
-- Reusability for other parts of the app
-- Automatic syncing between state and `localStorage`
