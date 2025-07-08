@@ -1,14 +1,14 @@
+import { filterOptions } from "../../utils/options";
 import Select from "../atoms/Select";
 
 function FilterList({ currentFilter, onChangeFilter }) {
-  const options = [
-    { value: "all", label: "All" },
-    { value: "active", label: "Active" },
-    { value: "completed", label: "Completed" },
-  ];
-
   return (
-    <Select options={options} value={currentFilter} onChange={onChangeFilter} />
+    <Select
+      ariaLabel={"Filter Select"}
+      options={filterOptions}
+      value={currentFilter}
+      onChange={onChangeFilter}
+    />
   );
 }
 
