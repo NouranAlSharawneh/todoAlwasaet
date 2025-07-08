@@ -83,7 +83,7 @@ This sketch helped me identify the component boundaries for the Atomic Design ar
 
 ## Activity Flow Diagram
 
-An Activity flow digram was created to visualize the logical flow of task creation, validation, filtering, task deletion, and UI state transitions.
+An Activity flow diagram was created to visualize the logical flow of task creation, validation, filtering, task deletion, and UI state transitions.
 
 > ![Flow Diagram](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/ActivityDigram.png)
 
@@ -101,9 +101,9 @@ An Activity flow digram was created to visualize the logical flow of task creati
 
 ## Folder Structure
 
-A folder strurcture digram was created in **Lucidchart** to visualize the logical of breaking the componets down following the **Atomic Design architecture**.
+A folder strurcture diagram was created in **Lucidchart** to visualize the logical of breaking the componets down following the **Atomic Design architecture**.
 
-> ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png)
+> ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png) > _(**Note:** This diagram only shows the `atomic` folder. Other folders are excluded.)_
 
 ---
 
