@@ -103,7 +103,8 @@ An Activity flow diagram was created to visualize the logical flow of task creat
 
 A folder strurcture diagram was created in **Lucidchart** to visualize the logical of breaking the componets down following the **Atomic Design architecture**.
 
-> ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png) > _(**Note:** This diagram only shows the `atomic` folder. Other folders are excluded.)_
+> ![Folder Structure](https://github.com/NouranAlSharawneh/todoAlwasaet/blob/main/public/assets/FolderStructure.png)
+> _(**Note:** This diagram only shows the `atomic Design architecture` folders. Other folders are excluded.)_
 
 ---
 
