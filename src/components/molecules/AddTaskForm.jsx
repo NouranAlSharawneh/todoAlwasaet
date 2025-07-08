@@ -21,11 +21,18 @@ function AddTaskForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-6 ">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-6"
+      action="/submit-task"
+      method="POST"
+    >
       <div className="flex justify-between items-center gap-6 lg:gap-20">
         <div className="flex-1">
-          <FormLabel>Category</FormLabel>
+          <FormLabel htmlFor="category-select">Category</FormLabel>
           <Select
+            id="category-select"
+            ariaLabel="Category Select"
             options={categoryOptions}
             value={category}
             onChange={setCategory}
@@ -33,8 +40,10 @@ function AddTaskForm({ onSubmit }) {
           />
         </div>
         <div className="flex-1">
-          <FormLabel>Color</FormLabel>
+          <FormLabel htmlFor="color-picker">Color</FormLabel>
           <Colorpicker
+            id="color-picker"
+            ariaLabel="Color Picker"
             colorOptions={colorOptions}
             color={color}
             setColor={setColor}
