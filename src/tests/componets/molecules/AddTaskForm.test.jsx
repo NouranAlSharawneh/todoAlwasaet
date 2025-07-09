@@ -14,9 +14,9 @@ describe("AddTaskForm", () => {
   // testing if all the form fields are rendered
   it("renders all form fields", () => {
     render(<AddTaskForm onSubmit={handleSubmit} />);
-    expect(screen.getByText("Category")).toBeInTheDocument();
+    expect(screen.getByLabelText("Category")).toBeInTheDocument();
     expect(screen.getByText("Color")).toBeInTheDocument();
-    expect(screen.getByText("Task")).toBeInTheDocument();
+    expect(screen.getByLabelText("Task")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /add/i })).toBeInTheDocument();
   });
 
