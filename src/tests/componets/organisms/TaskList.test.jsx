@@ -31,7 +31,7 @@ describe("TaskList", () => {
   // testing the TaskItem for each task
   it("renders TaskItem for each task", () => {
     render(<TaskList tasks={tasks} setTasks={handleSetTasksFn} />);
-    const items = screen.getAllByTestId("task-item");
+    const items = screen.getAllByText(/task/i);
     expect(items).toHaveLength(2);
 
     tasks.forEach((task, index) => {

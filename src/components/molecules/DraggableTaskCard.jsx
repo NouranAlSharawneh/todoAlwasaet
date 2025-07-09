@@ -15,7 +15,6 @@ const DraggableTaskCard = ({
   return (
     <div
       {...swipeHandlers}
-      data-testid="task-item"
       className={`flex items-center justify-between p-4 border rounded border-y-gray-200 border-r-gray-200 border-l-4 transition-all duration-200 z-30 ${
         colorClasses[color]
       } bg-white shadow-xs hover:shadow-md ${

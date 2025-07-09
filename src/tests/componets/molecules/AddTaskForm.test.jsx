@@ -44,12 +44,14 @@ describe("AddTaskForm", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /add/i }));
     expect(handleSubmit).not.toHaveBeenCalled();
+    expect(screen.getByRole("button", { name: /add/i })).toBeDisabled();
 
-    fireEvent.change(screen.getByLabelText("Task"), {
+    fireEvent.change(screen.getByLabelText(/task/i), {
       target: { value: "a".repeat(33) },
     });
 
     fireEvent.click(screen.getByRole("button", { name: /add/i }));
     expect(handleSubmit).not.toHaveBeenCalled();
+    expect(screen.getByRole("button", { name: /add/i })).toBeDisabled();
   });
 });
