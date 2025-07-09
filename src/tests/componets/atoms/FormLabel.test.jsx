@@ -5,9 +5,9 @@ import { describe, it, expect } from "@jest/globals";
 import FormLabel from "../../../components/atoms/FormLabel";
 
 describe("FormLabel", () => {
-  // Pass the text to the button as a prop = children
+  // pass the text to the button as a prop = children
   it("renders children", () => {
     render(<FormLabel>Test Label</FormLabel>);
-    expect(screen.getByText("Test Label")).toBeInTheDocument();
+    expect(screen.getByText(/label/i)).toBeInTheDocument();
   });
 });

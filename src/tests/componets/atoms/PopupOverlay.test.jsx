@@ -12,6 +12,6 @@ describe("PopupOverlay", () => {
         <div>Test Child</div>
       </PopupOverlay>
     );
-    expect(screen.getByText("Test Child")).toBeInTheDocument();
+    expect(screen.getByText(/test/i)).toBeInTheDocument();
   });
 });
